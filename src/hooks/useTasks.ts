@@ -17,7 +17,7 @@ const sampleTasks = [
     priority: 'high' as const,
     dueDate: '2025-05-30',
     assignee: 'Anna Kowalska',
-    tags: ['UI/UX', 'Design'],
+    tags: ['UI/UX', 'Design', 'Frontend'],
     status: 'todo',
     comments: 3,
     attachments: 2
@@ -30,7 +30,7 @@ const sampleTasks = [
     priority: 'medium' as const,
     dueDate: '2025-06-02',
     assignee: 'Jan Nowak',
-    tags: ['Dokumentacja', 'API'],
+    tags: ['Dokumentacja', 'API', 'Backend'],
     status: 'todo',
     comments: 1,
     attachments: 0
@@ -43,7 +43,7 @@ const sampleTasks = [
     priority: 'high' as const,
     dueDate: '2025-05-28',
     assignee: 'Michał Wiśniewski',
-    tags: ['Frontend', 'React'],
+    tags: ['Frontend', 'React', 'UI/UX'],
     status: 'in-progress',
     comments: 5,
     attachments: 1
@@ -56,7 +56,7 @@ const sampleTasks = [
     priority: 'medium' as const,
     dueDate: '2025-06-05',
     assignee: 'Katarzyna Nowak',
-    tags: ['Optymalizacja', 'Performance'],
+    tags: ['Optymalizacja', 'Performance', 'Frontend'],
     status: 'in-progress',
     comments: 2,
     attachments: 0
@@ -69,7 +69,7 @@ const sampleTasks = [
     priority: 'medium' as const,
     dueDate: '2025-06-01',
     assignee: 'Tomasz Kowalski',
-    tags: ['Testy', 'Jest'],
+    tags: ['Testy', 'Jest', 'Quality Assurance'],
     status: 'review',
     comments: 1,
     attachments: 3
@@ -82,7 +82,7 @@ const sampleTasks = [
     priority: 'low' as const,
     dueDate: '2025-05-25',
     assignee: 'Paweł Zieliński',
-    tags: ['DevOps', 'CI/CD'],
+    tags: ['DevOps', 'CI/CD', 'Automatyzacja'],
     status: 'completed',
     comments: 0,
     attachments: 1
@@ -95,10 +95,75 @@ const sampleTasks = [
     priority: 'low' as const,
     dueDate: '2025-05-20',
     assignee: 'Agnieszka Mazur',
-    tags: ['Analiza', 'Biznes'],
+    tags: ['Analiza', 'Biznes', 'Planowanie'],
     status: 'completed',
     comments: 4,
     attachments: 2
+  },
+  {
+    id: '8',
+    listId: '1',
+    title: 'Integracja z bazą danych',
+    description: 'Połączenie aplikacji z bazą danych PostgreSQL',
+    priority: 'high' as const,
+    dueDate: '2025-06-03',
+    assignee: 'Jan Nowak',
+    tags: ['Backend', 'Database', 'API'],
+    status: 'todo',
+    comments: 2,
+    attachments: 1
+  },
+  {
+    id: '9',
+    listId: '2',
+    title: 'Dashboard z analityką',
+    description: 'Stworzenie dashboardu z statystykami zadań',
+    priority: 'high' as const,
+    dueDate: '2025-05-29',
+    assignee: 'Anna Kowalska',
+    tags: ['Frontend', 'Analytics', 'UI/UX'],
+    status: 'in-progress',
+    comments: 3,
+    attachments: 0
+  },
+  {
+    id: '10',
+    listId: '1',
+    title: 'Responsywny design mobilny',
+    description: 'Optymalizacja interfejsu dla urządzeń mobilnych',
+    priority: 'medium' as const,
+    dueDate: '2025-06-07',
+    assignee: 'Michał Wiśniewski',
+    tags: ['Mobile', 'Responsive', 'CSS'],
+    status: 'todo',
+    comments: 1,
+    attachments: 0
+  },
+  {
+    id: '11',
+    listId: '3',
+    title: 'Bezpieczeństwo aplikacji',
+    description: 'Audyt bezpieczeństwa i implementacja zabezpieczeń',
+    priority: 'high' as const,
+    dueDate: '2025-06-04',
+    assignee: 'Tomasz Kowalski',
+    tags: ['Security', 'Audit', 'Backend'],
+    status: 'review',
+    comments: 2,
+    attachments: 2
+  },
+  {
+    id: '12',
+    listId: '2',
+    title: 'Notyfikacje push',
+    description: 'Sistema powiadomień o zadaniach i terminach',
+    priority: 'low' as const,
+    dueDate: '2025-06-10',
+    assignee: 'Katarzyna Nowak',
+    tags: ['Notifications', 'Frontend', 'User Experience'],
+    status: 'in-progress',
+    comments: 1,
+    attachments: 0
   }
 ]
 

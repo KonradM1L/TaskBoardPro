@@ -1,11 +1,12 @@
 import React, { useState } from 'react'
-import { Plus, Calendar, LayoutGrid } from 'lucide-react'
+import { Plus, Calendar, LayoutGrid, BarChart3 } from 'lucide-react'
 import { Button } from '../components/ui/button'
 import { TaskBoard } from '../components/TaskBoard'
 import { TimelineCalendar } from '../components/TimelineCalendar'
+import { Dashboard } from '../components/Dashboard'
 
 export function BoardPage() {
-  const [viewMode, setViewMode] = useState<'board' | 'calendar'>('board')
+  const [viewMode, setViewMode] = useState<'board' | 'calendar' | 'dashboard'>('board')
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-blue-50 via-white to-purple-50 dark:from-gray-900 dark:via-gray-800 dark:to-blue-900">
@@ -41,11 +42,22 @@ export function BoardPage() {
               <Calendar className="w-4 h-4" />
               <span>Kalendarz</span>
             </Button>
+            <Button
+              variant={viewMode === 'dashboard' ? 'default' : 'outline'}
+              size="sm"
+              onClick={() => setViewMode('dashboard')}
+              className="flex items-center space-x-2"
+            >
+              <BarChart3 className="w-4 h-4" />
+              <span>Dashboard</span>
+            </Button>
           </div>
         </div>
 
         {/* Content */}
-        {viewMode === 'board' ? <TaskBoard /> : <TimelineCalendar />}
+        {viewMode === 'board' && <TaskBoard />}
+        {viewMode === 'calendar' && <TimelineCalendar />}
+        {viewMode === 'dashboard' && <Dashboard />}
       </div>
     </div>
   )

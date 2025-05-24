@@ -6,6 +6,7 @@ Nowoczesna aplikacja do zarządzania projektami podobna do Trello z dodatkowymi 
 
 - 📋 **Tablice Kanban** - Zarządzaj projektami w stylu Trello
 - 📅 **Kalendarz Timeline** - Wyświetlaj zadania uporządkowane według dat
+- 📊 **Dashboard Analytics** - Cockpit z analizą danych i statystykami
 - 🔄 **Przeciągaj i upuszczaj** - Intuicyjne przesuwanie kart między listami
 - 🏷️ **Etykiety i priorytety** - Organizuj zadania kolorami i priorytetami
 - 📝 **Szczegóły zadań** - Opisy, terminy, komentarze i załączniki
@@ -41,9 +42,10 @@ npm run build
 
 1. **Widok tablicy** - Tradycyjny widok Kanban z listami zadań
 2. **Kalendarz timeline** - Przełącz się na widok kalendarza, aby zobaczyć zadania według dat
-3. **Dodawanie zadań** - Kliknij "Dodaj kartę" w dowolnej liście
-4. **Edycja zadań** - Kliknij na kartę, aby otworzyć szczegóły
-5. **Przeciąganie** - Przenoś karty między listami metodą drag & drop
+3. **Dashboard Analytics** - Cockpit z kompletną analizą projektu
+4. **Dodawanie zadań** - Kliknij "Dodaj kartę" w dowolnej liście
+5. **Edycja zadań** - Kliknij na kartę, aby otworzyć szczegóły
+6. **Przeciąganie** - Przenoś karty między listami metodą drag & drop
 
 ## 📅 Kalendarz Timeline
 
@@ -52,6 +54,16 @@ Unikalna funkcja wyświetlająca zadania w widoku kalendarza:
 - Nawigacja między miesiącami
 - Kolorowe etykiety priorytetów
 - Szybki przegląd miesięczny
+
+## 📊 Dashboard Analytics
+
+Zaawansowany cockpit z analityką projektu:
+- **Liczba kart na listę** - Rozkład zadań w kolumnach Kanban
+- **Liczba kart na termin** - Analiza terminów według tygodni
+- **Liczba kart na członka** - Obciążenie pracą zespołu
+- **Liczba kart na etykietę** - Popularność kategorii zadań
+- **Statystyki priorytetów** - Rozkład ważności zadań
+- **Wskaźniki wydajności** - Procent ukończenia i przeterminowane zadania
 
 ## 🚀 Wdrożenie
 
