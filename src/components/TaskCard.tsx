@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import { useDrag } from 'react-dnd'
-import { Calendar, User, MessageSquare, Paperclip } from 'lucide-react'
+import { Calendar, User, MessageSquare, Paperclip, CheckSquare, Users, Bell } from 'lucide-react'
 import { format } from 'date-fns'
 import { pl } from 'date-fns/locale'
 import { Card, CardContent } from './ui/card'
@@ -10,6 +10,7 @@ import { TaskModal } from './TaskModal'
 interface TaskCardProps {
   task: {
     id: string
+    listId: string
     title: string
     description?: string
     priority?: 'low' | 'medium' | 'high'
@@ -19,6 +20,10 @@ interface TaskCardProps {
     status?: string
     comments?: number
     attachments?: number
+    createdAt?: string
+    members?: string[]
+    checklist?: { id: string; text: string; completed: boolean }[]
+    isWatching?: boolean
   }
 }
 
@@ -64,11 +69,39 @@ export function TaskCard({ task }: TaskCardProps) {
             {/* Tags */}
             {task.tags && task.tags.length > 0 && (
               <div className="flex flex-wrap gap-1">
-                {task.tags.map((tag, index) => (
+                {task.tags.slice(0, 2).map((tag, index) => (
                   <Badge key={index} variant="secondary" className="text-xs">
                     {tag}
                   </Badge>
                 ))}
+                {task.tags.length > 2 && (
+                  <Badge variant="outline" className="text-xs">
+                    +{task.tags.length - 2}
+                  </Badge>
+                )}
+              </div>
+            )}
+            
+            {/* Members */}
+            {task.members && task.members.length > 0 && (
+              <div className="flex items-center space-x-1">
+                <Users className="w-3 h-3 text-gray-500" />
+                <div className="flex -space-x-1">
+                  {task.members.slice(0, 3).map((member, index) => (
+                    <div 
+                      key={index}
+                      className="w-5 h-5 bg-blue-500 rounded-full flex items-center justify-center text-white text-xs font-semibold border border-white"
+                      title={member}
+                    >
+                      {member.charAt(0).toUpperCase()}
+                    </div>
+                  ))}
+                  {task.members.length > 3 && (
+                    <div className="w-5 h-5 bg-gray-400 rounded-full flex items-center justify-center text-white text-xs border border-white">
+                      +{task.members.length - 3}
+                    </div>
+                  )}
+                </div>
               </div>
             )}
             
@@ -87,17 +120,17 @@ export function TaskCard({ task }: TaskCardProps) {
               </div>
             )}
             
-            {/* Assignee */}
-            {task.assignee && (
-              <div className="flex items-center text-sm text-gray-600 dark:text-gray-300">
-                <User className="w-4 h-4 mr-1" />
-                {task.assignee}
-              </div>
-            )}
-            
-            {/* Footer with stats */}
+            {/* Footer with stats and indicators */}
             <div className="flex items-center justify-between text-xs text-gray-500 dark:text-gray-400">
               <div className="flex items-center space-x-2">
+                {/* Checklist progress */}
+                {task.checklist && task.checklist.length > 0 && (
+                  <div className="flex items-center">
+                    <CheckSquare className="w-3 h-3 mr-1" />
+                    {task.checklist.filter(item => item.completed).length}/{task.checklist.length}
+                  </div>
+                )}
+                
                 {task.comments && task.comments > 0 && (
                   <div className="flex items-center">
                     <MessageSquare className="w-3 h-3 mr-1" />
@@ -108,6 +141,23 @@ export function TaskCard({ task }: TaskCardProps) {
                   <div className="flex items-center">
                     <Paperclip className="w-3 h-3 mr-1" />
                     {task.attachments}
+                  </div>
+                )}
+              </div>
+              
+              <div className="flex items-center space-x-1">
+                {/* Watching indicator */}
+                {task.isWatching && (
+                  <Bell className="w-3 h-3 text-blue-500" title="Obserwujesz to zadanie" />
+                )}
+                
+                {/* Assignee avatar */}
+                {task.assignee && (
+                  <div 
+                    className="w-4 h-4 bg-green-500 rounded-full flex items-center justify-center text-white text-xs font-semibold"
+                    title={task.assignee}
+                  >
+                    {task.assignee.charAt(0).toUpperCase()}
                   </div>
                 )}
               </div>

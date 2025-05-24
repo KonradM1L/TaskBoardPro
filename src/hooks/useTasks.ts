@@ -13,40 +13,66 @@ const sampleTasks = [
     id: '1',
     listId: '1',
     title: 'Zaprojektować interfejs użytkownika',
-    description: 'Stworzenie nowoczesnego i intuicyjnego interfejsu dla aplikacji TaskFlow',
+    description: 'Stworzenie nowoczesnego i intuicyjnego interfejsu dla aplikacji TaskFlow z uwzględnieniem najlepszych praktyk UX.',
     priority: 'high' as const,
     dueDate: '2025-05-30',
     assignee: 'Anna Kowalska',
     tags: ['UI/UX', 'Design', 'Frontend'],
     status: 'todo',
     comments: 3,
-    attachments: 2
+    attachments: 2,
+    createdAt: '2025-05-20T09:00:00Z',
+    members: ['Anna Kowalska', 'Michał Wiśniewski'],
+    checklist: [
+      { id: '1', text: 'Analiza wymagań użytkowników', completed: true },
+      { id: '2', text: 'Stworzenie wireframes', completed: true },
+      { id: '3', text: 'Projektowanie prototypu', completed: false },
+      { id: '4', text: 'Testy użyteczności', completed: false }
+    ],
+    isWatching: true
   },
   {
     id: '2',
     listId: '1',
     title: 'Napisać dokumentację API',
-    description: 'Dokumentacja wszystkich endpointów API z przykładami',
+    description: 'Dokumentacja wszystkich endpointów API z przykładami użycia i opisem parametrów.',
     priority: 'medium' as const,
     dueDate: '2025-06-02',
     assignee: 'Jan Nowak',
     tags: ['Dokumentacja', 'API', 'Backend'],
     status: 'todo',
     comments: 1,
-    attachments: 0
+    attachments: 0,
+    createdAt: '2025-05-21T10:30:00Z',
+    members: ['Jan Nowak'],
+    checklist: [
+      { id: '1', text: 'Opisać endpointy użytkowników', completed: false },
+      { id: '2', text: 'Dodać przykłady requestów', completed: false },
+      { id: '3', text: 'Sprawdzić poprawność składni', completed: false }
+    ],
+    isWatching: false
   },
   {
     id: '3',
     listId: '2',
     title: 'Implementacja kalendarz timeline',
-    description: 'Dodanie funkcji wyświetlania zadań w widoku kalendarza',
+    description: 'Dodanie funkcji wyświetlania zadań w widoku kalendarza z możliwością nawigacji między miesiącami.',
     priority: 'high' as const,
     dueDate: '2025-05-28',
     assignee: 'Michał Wiśniewski',
     tags: ['Frontend', 'React', 'UI/UX'],
     status: 'in-progress',
     comments: 5,
-    attachments: 1
+    attachments: 1,
+    createdAt: '2025-05-18T14:15:00Z',
+    members: ['Michał Wiśniewski', 'Anna Kowalska'],
+    checklist: [
+      { id: '1', text: 'Stworzenie komponentu kalendarza', completed: true },
+      { id: '2', text: 'Integracja z danymi zadań', completed: true },
+      { id: '3', text: 'Dodanie nawigacji między miesiącami', completed: false },
+      { id: '4', text: 'Stylowanie responsywne', completed: false }
+    ],
+    isWatching: true
   },
   {
     id: '4',
